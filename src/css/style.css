@@ -1,0 +1,403 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primaria: #260aa1;
+    --secundaria: #fff;
+    --buttons: pink;
+    --sombra: #00000038;
+
+    --text1: #000;
+    --text2: #fff;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+
+
+    width: 100vw;
+    min-height: 100dvh;
+
+    background-color: var(--secundaria);
+    overflow-x: hidden;
+
+
+
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+    background-color: transparent;
+
+    z-index: 9999;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--text2);
+
+
+}
+
+
+header.scroll-header .logo,
+header.scroll-header .menu a {
+    color: var(--text1);
+}
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text2);
+    transition: all .3s;
+}
+
+.menu a:hover {
+    font-weight: bold;
+}
+
+header.scroll-header {
+    background-color: var(--secundaria);
+}
+
+
+section {
+    min-height: 100dvh;
+    width: 100vw;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+section.img_bg {
+    background-image: url("../img/7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-position: center;
+}
+
+.center {
+    width: 100%;
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    color: #fff;
+    background-color: #00000054;
+}
+
+.center.bg-off {
+    background-color: transparent;
+    color: var(--text1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.carrocel_content {
+    width: 100%;
+    min-height: 350px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.carrocel_content .iten {
+    min-width: 260px;
+    height: 250px;
+
+    background-color: #d2d2d2;
+
+    position: absolute;
+    left: 100%;
+
+    animation: carrocel_infinite 10s linear infinite;
+    animation-delay: var(--time);
+}
+
+.carrocel_content .iten img {
+    max-width: 100%;
+}
+
+
+@keyframes carrocel_infinite {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+
+
+.banner_ebook {
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 350px;
+    max-height: 500px;
+
+    border-radius: 10px;
+
+
+}
+
+
+@keyframes ebook_float {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+
+        transform: translateY(-10px);
+
+    }
+}
+
+.banner_ebook img {
+    max-width: 90%;
+    transform: rotate(3deg);
+}
+
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+}
+
+.infos h2 {
+    font-size: 3rem;
+}
+
+.infos .buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.infos .buttons a {
+
+    padding: 10px;
+    background-color: var(--secundaria);
+    color: var(--primaria);
+    text-decoration: none;
+
+    border-radius: 5px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.infos .buttons a.button {
+    background-color: var(--primaria);
+    color: var(--secundaria);
+
+}
+
+
+
+/* sobre area */
+.sbore_ebook {
+    display: flex;
+
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+
+.cards {
+
+    width: 100%;
+    height: 100%;
+
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+}
+
+
+.cards .card {
+
+
+    min-width: 250px;
+    min-height: 300px;
+
+    max-width: 250px;
+    max-height: 300px;
+
+    background-color: var(--secundaria);
+    box-shadow: 0 0 5px 5px var(--sombra);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+
+    gap: 20px;
+
+    padding: 30px 10px;
+}
+
+.cards .card strong {
+
+    margin-bottom: 20px;
+
+}
+
+.cards .card p {
+
+    margin-bottom: 20px;
+    font-size: 1rem;
+
+}
+
+
+
+
+
+
+
+
+
+/* Dispositivos pequenos (smartphones) */
+@media screen and (max-width: 768px) {
+    header {
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--secundaria);
+        width: 100%;
+        padding: 10px;
+        display: none;
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .center {
+        flex-direction: column;
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    .infos {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .infos h2 {
+        font-size: 2rem;
+    }
+
+    .infos .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .banner_ebook {
+        max-width: 250px;
+        max-height: 400px;
+    }
+
+    .sbore_ebook {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .cards .card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    #testemunhos {
+        display: none;
+    }
+}
