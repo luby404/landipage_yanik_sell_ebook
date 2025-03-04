@@ -32,9 +32,25 @@ document.querySelectorAll(".cards .test_mu").forEach((element, index) => {
 });
 
 
+let msg = document.querySelector(".message")
+
+setInterval(() => {
+    
+
+    msg.classList.add("show")
+    msg.innerHTML = `
+    
+    <span id="name">Nova Venda Realizada</span>
+    
+    `
 
 
+    setTimeout(() => {
+        msg.classList.remove("show")
+    }, 1500);
+    
 
+}, 5000);
 
 
 
