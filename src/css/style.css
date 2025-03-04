@@ -277,7 +277,7 @@ section {
 
 
 .message {
-    position: absolute;
+    position: fixed;
     top: 5px;
     left: 50%;
 
