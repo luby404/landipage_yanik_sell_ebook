@@ -1,10 +1,10 @@
-const scrollHeader = () =>{
+/*const scrollHeader = () =>{
     const header = document.querySelector('header')
 
     this.scrollY >= 50 ? header.classList.add('scroll-header') 
                        : header.classList.remove('scroll-header')
 }
-window.addEventListener('scroll', scrollHeader)
+window.addEventListener('scroll', scrollHeader)*/
 
 
 
@@ -18,13 +18,16 @@ var slideUp = {
 };
 
 ScrollReveal({ reset: true}).reveal('.infos', slideUp);
-ScrollReveal({ reset: true, delay: 300 }).reveal('.banner_ebook', slideUp);
-ScrollReveal({ reset: true}).reveal('.carrocel_content', slideUp);
+ScrollReveal({ reset: true, delay: 300 }).reveal('.card_img', slideUp);
 
 
 
 
 document.querySelectorAll(".cards .card").forEach((element, index) => {
+    ScrollReveal({ reset: true, delay: index*200 }).reveal(element, slideUp);
+});
+
+document.querySelectorAll(".cards .test_mu").forEach((element, index) => {
     ScrollReveal({ reset: true, delay: index*200 }).reveal(element, slideUp);
 });
 
