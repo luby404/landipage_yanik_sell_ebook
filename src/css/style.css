@@ -327,7 +327,7 @@ section {
 @media (max-width: 700px) {
 
     section {
-        min-height: 150dvh;
+        min-height: 100vh;
     }
 
     .center {
