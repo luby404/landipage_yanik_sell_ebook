@@ -47,7 +47,7 @@ setInterval(() => {
 
     setTimeout(() => {
         msg.classList.remove("show")
-    }, 2100);
+    }, 2500);
 
 
 }, 15000);
@@ -99,7 +99,11 @@ function updateTime() {
     let min = minutes < 10 ? "0" + minutes : minutes;
     let sec = seconds < 10 ? "0" + seconds : seconds;
     //let ms = milliseconds < 100 ? "0" + milliseconds : milliseconds;
-    document.getElementById("timer").innerText = `${min}:${sec}`;
+
+    let time = `<span>${min}</span>
+                <span>:</span>
+                <span>${sec}</span>`
+    document.getElementById("timer").innerHTML = time //`${min}:${sec}`;
 
 
 
